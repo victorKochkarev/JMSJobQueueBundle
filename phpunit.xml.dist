@@ -11,10 +11,19 @@
          syntaxCheck="false"
          bootstrap="./Tests/bootstrap.php"
 >
-
     <testsuites>
         <testsuite name="JMSJobQueueBundle Test Suite">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">/path/to/files</directory>
+            <exclude>
+                <directory>./Resources</directory>
+                <directory>./Tests</directory>
+                <directory>./vendor/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
